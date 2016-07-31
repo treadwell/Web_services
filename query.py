@@ -5,7 +5,7 @@ import requests
 
 '''Process:
 1. start server with main.py
-2. execute query.'''
+2. execute query.py'''
 
 data = {'arg1': 'val1', 'arg2': 'val2'}
 

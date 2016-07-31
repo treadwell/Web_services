@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Text web services</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Test page</h1>
+    <form action=''>
+      First name:<br>
+      <input type="text" id="firstname" name="firstname" value="{{first}}"><br>
+      Last name:<br>
+      <input type="text" id="lastname" name="lastname" value="{{last}}"><br/>
+      <button onclick="go()" type="submit" value="Submit">Dammit Jim, I'm a
+  doctor, not a button</button>
+    </form>
+	
+	<p id="result">
+		first name: {{first}}<br>
+		last name: {{last}}
+	</p>
+  </body>
+  
+  <script>
+   function go() {
+	  $("#result").html("first name = " + $("#firstname").val() + "<br>" + $("#lastname").val())
+	   }
+  </script>
+</html>
