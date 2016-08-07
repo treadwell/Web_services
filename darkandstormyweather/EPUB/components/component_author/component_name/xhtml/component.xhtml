@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+    <head>
+        <title>Hello World</title>
+        <link href="../css/style.css" rel="stylesheet"/>
+        <meta name="viewport" content="width=480, height=320"/>
+    </head>
+    <body class="center" aria-describedby="description">
+        <h1 class="screen_reader_only">Weather Widget Example </h1>
+        <p id="description" class="screen_reader_only">A basic packaged EPUB Scriptable Component.</p>
+
+        <div id="online" style="display:block">
+
+        <img src="https://lh3.ggpht.com/I9bnLRfCtY1dmiIi6TN1fvIM-pU2n14P15OE-gpVLe4h2nmR8IKR0sNA69R9wadCWow=w170" height="60"></img>
+        <hr/>
+
+        Enter city or zip code : <input type="text" name="city" id="cityname"></input>
+        <button onclick="buttonHandler(event, document.getElementById('cityname'))" onkeyup="buttonHandler(event, document.getElementById('cityname'))" aria-controls="demo">Get weather </button>
+        
+        <script src="../js/main.js"></script>
+        <hr/>
+        <div id="demo">
+            ..this gets updated when you click button above ...
+        </div>
+        <hr/>
+        <div id="status">
+                ...this where status of request is displayed ...
+                </div>
+        <hr/>
+        <div id="renderer">
+            ...epub capabilities ...
+        </div>
+
+        </div>
+        <div id="offline" style="display:none">
+                <h2> Sorry, Internet access does not seem to be available on your device.</h2>
+
+                </div>
+
+    </body>
+</html>
