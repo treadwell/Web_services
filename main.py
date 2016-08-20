@@ -15,7 +15,7 @@ def form_route():
     #         for k, v in request.args.items():
     #             data[k] = v
     #         return json.dumps(data)
-        
+
     first = request.args.get('firstname', 'Mickey')
     last = request.args.get('lastname', 'Mouse')
     return render_template('index.html', url = '/',
@@ -28,17 +28,18 @@ def make_html(first, last):
         return ''
     return 'first name: {}<br>last name: {}'.format(first, last)
 
-@app.route('/myroute')
+@app.route('/myroute', methods = ['PUT'])
 def hello2():
-    # data = json.loads(request.data)
-    data = {}
-    for k, v in request.args.iteritems():
-        data[k] = v
+    data = json.loads(request.data)
+    # print data
+    # data = {}
+    # for k, v in request.args.iteritems():
+    #     data[k] = v
 
     if not data:
         data = ["empty"]
-        
-    return json.dumps(data)
+
+    return json.dumps(data.keys())
     # return str(data.values())
 
 
