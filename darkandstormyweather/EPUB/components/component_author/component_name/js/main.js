@@ -5,15 +5,19 @@
  */
 
 
-window.onload = function (){
+window.onload = function (){  // loads with window, basic checking
 
-    document.getElementById("status").innerHTML = 'Connection exists : ' + doesConnectionExist();
+    document.getElementById("status").innerHTML = 'Connection exists : ' + doesConnectionExist();  // see fn at bottom
+    // document assigned by default
+    // window default
+    // innerHTML the text inside the element with "status" id.
+    // Best way to debug is in the console
     if (doesConnectionExist() === false) {
         document.getElementById("online").style.display ='none';
         document.getElementById("offline").style.display ='block';
     }
 
-    var ReadingSystem = navigator.epubReadingSystem;
+    var ReadingSystem = navigator.epubReadingSystem;  // Where is navigator?  
     if (ReadingSystem){
         document.getElementById('renderer').innerHTML = ReadingSystem.name + ' v. ' + ReadingSystem.version;
     }else{
@@ -69,7 +73,7 @@ function transferCanceled(evt) {
 
 function buttonHandler(event, city) {
     // Older browsers may still be clinging to the charCode or keyCode implementation
-    var charCode = event.which ? event.which : event.charCode ? event.charCode : event.keyCode ? event.keyCode : 0;
+    var charCode = event.which ? event.which : event.charCode ? event.charCode : event.keyCode ? event.keyCode : 0;  // ternary if - like a switch, but a nested if statement
 
     document.getElementById("demo").innerHTML = "Request received";
 
